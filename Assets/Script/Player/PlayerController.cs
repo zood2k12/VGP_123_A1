@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(Animation))]
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     //Movement Variables
     [SerializeField, Range(1, 20)] private float speed = 5;
@@ -13,7 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     //GroundCheck stuff
     private Transform groundcheck;
-    private bool isGround = false;
+    private bool isGrounded = false;
 
     //Component References
     Rigidbody2D rb;
@@ -43,10 +43,11 @@ public class NewBehaviourScript : MonoBehaviour
             Debug.Log("JumpForce was set incorrectly");
         }
 
+        //Creating groundcheck object
         if (!groundcheck)
         {
             GameObject obj = new GameObject();
-            obj.transform.SetParent(gameObject.transform);
+            obj.transform.SetParent(transform);
             obj.transform.localPosition = Vector3.zero;
             obj.name = "GroundCheck";
             groundcheck = obj.transform;
@@ -57,25 +58,24 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (!isGround)
-
-        {
-            if (rb.velocity.y <= 0)
-            {
-                isGround = IsGround();
-            }
-        }
-
-        isGround = Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, isGroundLayer);
-
-       //grab horizontal axis - Check Project Settings > Input Manager to see the inputs defined
+        //Create a small overlap collider to check if we are touching the ground
+        IsGrounded();
+        
+        //grab horizontal axis - Check Project Settings > Input Manager to see the inputs defined
         float hInput = Input.GetAxis("Horizontal");
 
 
 
         rb.velocity = new Vector2(hInput * speed, rb.velocity.y);
 
-        if (Input.GetButtonDown("Jump") && isGround)
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+        }
+
+
+        if (Input.GetButtonDown(KeyCode.LeftControl) && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
@@ -86,11 +86,19 @@ public class NewBehaviourScript : MonoBehaviour
         //if (hInput > 0 && sr.flipX || hInput < 0 && !sr.flipX) sr.flipX = !sr.flipX;
 
         anim.SetFloat("hInput", Mathf.Abs(hInput));
-        anim.SetBool("isGrounded", isGround);
+        anim.SetBool("isGrounded", isGrounded);
 
     }
-    bool Isground()
+    void IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, isGroundLayer);
+        if (!isGrounded)
+        {
+            if (rb.velocity.y <= 0)
+            {
+                isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, isGroundLayer);
+            }
+        }
+        else
+            isGrounded = Physics2D.OverlapCircle(groundcheck.position, groundCheckRadius, isGroundLayer);
     }
 }
