@@ -75,12 +75,6 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetButtonDown(KeyCode.LeftControl) && isGrounded)
-        {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-
-        }
-
         //Sprite Flipling
         if (hInput != 0) sr.flipX = (hInput < 0);
         //if (hInput > 0 && sr.flipX || hInput < 0 && !sr.flipX) sr.flipX = !sr.flipX;
