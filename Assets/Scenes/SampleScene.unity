@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3628609fd58f2748873c0e4613f49ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 519420032}
+  player: {fileID: 1528060721}
   minXClamp: -10.05
   maxXClamp: 224.01
 --- !u!1 &798022805
@@ -834,6 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d52437c1e2c4d449bb0cdf3112de760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLives: 10
   speed: 5
   jumpForce: 8
   groundCheckRadius: 0.02
@@ -875,8 +876,8 @@ BoxCollider2D:
   m_Offset: {x: -0.375, y: 0.567699}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.75, y: 1.4}
+    pivot: {x: 1, y: 0}
+    oldSize: {x: 0.8, y: 1.35}
     newSize: {x: 0.15, y: 0.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

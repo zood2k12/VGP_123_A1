@@ -151,8 +151,8 @@ TextureImporter:
         y: 78
         width: 16
         height: 28
-      alignment: 8
-      pivot: {x: 1, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,8 +172,8 @@ TextureImporter:
         y: 78
         width: 16
         height: 27
-      alignment: 8
-      pivot: {x: 1, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1110,7 +1110,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_47
+      name: MarioFire1
       rect:
         serializedVersion: 2
         x: 61
@@ -1131,7 +1131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_48
+      name: MarioFire2
       rect:
         serializedVersion: 2
         x: 79
@@ -1152,7 +1152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_49
+      name: MarioFire3
       rect:
         serializedVersion: 2
         x: 97
@@ -1403,6 +1403,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Sprite_Mario_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 11
+        width: 189
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbae9c153f458d24199c1060d5277d4e
+      internalID: -484062604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Mario_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 471
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ae71311cfcc1d41bf149f5f099f3cd
+      internalID: -837941430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite_Mario_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 471
+        height: 107
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6394b6003e59cc74798e5659655555c6
+      internalID: -1075433600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1422,8 +1485,13 @@ TextureImporter:
       JumpAttack_04: 931593514
       JumpAttack_05: -1193582972
       JumpAttack_06: 588573197
+      MarioFire1: 232257146
+      MarioFire2: 1150176556
+      MarioFire3: 199787796
       MarioWalk1: -1754113804
       MarioWalk2: 1487014375
+      Sprite_Mario_0: -484062604
+      Sprite_Mario_1: -837941430
       Sprite_Mario_10: 1849372513
       Sprite_Mario_11: -1217160701
       Sprite_Mario_12: 101436734
@@ -1434,6 +1502,7 @@ TextureImporter:
       Sprite_Mario_17: -1387738386
       Sprite_Mario_18: 214220576
       Sprite_Mario_19: 1322445752
+      Sprite_Mario_2: -1075433600
       Sprite_Mario_20: -886125729
       Sprite_Mario_21: -1784170291
       Sprite_Mario_22: 1735647867
@@ -1463,9 +1532,6 @@ TextureImporter:
       Sprite_Mario_44: -1156541508
       Sprite_Mario_45: -861878327
       Sprite_Mario_46: -375642139
-      Sprite_Mario_47: 232257146
-      Sprite_Mario_48: 1150176556
-      Sprite_Mario_49: 199787796
       Sprite_Mario_5: -582887474
       Sprite_Mario_50: -2072161276
       Sprite_Mario_51: -1036058475
