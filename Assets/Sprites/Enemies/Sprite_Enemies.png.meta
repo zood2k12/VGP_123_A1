@@ -9678,15 +9678,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_455
+      name: KoopaTurn
       rect:
         serializedVersion: 2
         x: 9
         y: 123
         width: 16
         height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9699,15 +9699,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_456
+      name: KoopaWalk1
       rect:
         serializedVersion: 2
         x: 27
         y: 123
         width: 16
         height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9720,15 +9720,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_457
+      name: KoopaWalk2
       rect:
         serializedVersion: 2
         x: 46
         y: 123
         width: 16
         height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9930,15 +9930,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_467
+      name: KoopaDeath
       rect:
         serializedVersion: 2
         x: 250
         y: 137
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -10602,15 +10602,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_499
+      name: KoopSquish
       rect:
         serializedVersion: 2
         x: 250
         y: 120
         width: 16
         height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -14560,6 +14560,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      KoopSquish: 689087547
+      KoopaDeath: -547289928
+      KoopaTurn: -193020029
+      KoopaWalk1: -1317992884
+      KoopaWalk2: 1724593912
       PlayerProjectile: -1667787094
       Sprite_Enemies_0: 1689107725
       Sprite_Enemies_1: -1059011457
@@ -14956,9 +14961,6 @@ TextureImporter:
       Sprite_Enemies_452: -1602289094
       Sprite_Enemies_453: -2109421122
       Sprite_Enemies_454: 1072593034
-      Sprite_Enemies_455: -193020029
-      Sprite_Enemies_456: -1317992884
-      Sprite_Enemies_457: 1724593912
       Sprite_Enemies_458: 743447724
       Sprite_Enemies_459: 1962665406
       Sprite_Enemies_46: -133957833
@@ -14969,7 +14971,6 @@ TextureImporter:
       Sprite_Enemies_464: -1807100586
       Sprite_Enemies_465: -562984655
       Sprite_Enemies_466: 1639283164
-      Sprite_Enemies_467: -547289928
       Sprite_Enemies_468: -274301082
       Sprite_Enemies_469: -1074373544
       Sprite_Enemies_47: 435189804
@@ -15004,7 +15005,6 @@ TextureImporter:
       Sprite_Enemies_496: -1631369307
       Sprite_Enemies_497: 184488211
       Sprite_Enemies_498: -1199516075
-      Sprite_Enemies_499: 689087547
       Sprite_Enemies_5: -49387158
       Sprite_Enemies_50: -1075524694
       Sprite_Enemies_500: -2091109790
