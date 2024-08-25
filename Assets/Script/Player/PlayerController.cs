@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
             if (curPlayingClips[0].clip.name == "Attack")
             {
                 if (isGrounded)
-                    rb.velocity = Vector2.zero;
+                 rb.velocity = Vector2.zero;
                 //new Vector2(0, rb.velocity.y);
             }
             else

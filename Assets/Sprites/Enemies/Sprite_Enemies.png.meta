@@ -1950,7 +1950,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_87
+      name: PlayerProjectil
       rect:
         serializedVersion: 2
         x: 79
@@ -6171,7 +6171,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerProjectile
+      name: PlayerProjectile3
       rect:
         serializedVersion: 2
         x: 801
@@ -14565,7 +14565,8 @@ TextureImporter:
       KoopaTurn: -193020029
       KoopaWalk1: -1317992884
       KoopaWalk2: 1724593912
-      PlayerProjectile: -1667787094
+      PlayerProjectil: -1265887851
+      PlayerProjectile3: -1667787094
       Sprite_Enemies_0: 1689107725
       Sprite_Enemies_1: -1059011457
       Sprite_Enemies_10: -582249089
@@ -15233,7 +15234,6 @@ TextureImporter:
       Sprite_Enemies_84: 434503490
       Sprite_Enemies_85: 1610970014
       Sprite_Enemies_86: 1285053627
-      Sprite_Enemies_87: -1265887851
       Sprite_Enemies_88: -1262960714
       Sprite_Enemies_89: 813878981
       Sprite_Enemies_9: 30201177

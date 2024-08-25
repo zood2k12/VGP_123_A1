@@ -34,6 +34,7 @@ public class Shoot : MonoBehaviour
         {
             Projectile curProjectile = Instantiate(projectilePrefab, spawnPointRight.position, Quaternion.identity);
             curProjectile.SetVelocity(xVel, yVel);
+            // Quaternion says that dont change rotation, stay the same
         }
         else
         {
