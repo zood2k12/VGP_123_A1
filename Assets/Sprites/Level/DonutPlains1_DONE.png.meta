@@ -215,7 +215,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,6 +223,69 @@ TextureImporter:
       bones: []
       spriteID: f272c84e12b3ea24f8781d9f8c92111b
       internalID: 1320108825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1upRed
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45643902c789a3c49941be1ed1fc5526
+      internalID: -1302443568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1upBlue
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 147
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd3edb675fe17543809b5d3e4286918
+      internalID: 1812296767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keys
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 103
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06933a8fcd4f4ca4a805a303c50e232a
+      internalID: 1374899602
       vertices: []
       indices: 
       edges: []
@@ -239,9 +302,12 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       1up: 1320108825
+      1upBlue: 1812296767
+      1upRed: -1302443568
       Coin: 2084086892
       DonutPlains1_DONE_0: -1085350965
       DonutPlains1_DONE_1: -928192395
+      Keys: 1374899602
       YoshiCoin: 1372185906
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
