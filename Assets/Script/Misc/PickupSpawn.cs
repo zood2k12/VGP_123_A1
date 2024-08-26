@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PickupSpawn : MonoBehaviour
 {
-    /* To Delete this comment to use the script August 20th.
-     * This script serves to spawn randomly for Lab 5, solution
+    //Script it`s a bit less generic and have to check for more random ones to apply for future projects
+    //This script serves to spawn randomly for Lab 5, solution
      
     public GameObject spawnPrefab;
 
@@ -13,8 +13,8 @@ public class PickupSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float randXPos = Random.Ramge(-8.05f, 200.01f);
-        float randYPos = Random.Ramge(-8.05f, 200.01f);
+        float randXPos = Random.Range(-8.05f, 200.01f);
+        float randYPos = Random.Range(-8.05f, 200.01f);
 
         transform.position = Vector2(randXPos, randYPos);
 
@@ -25,5 +25,5 @@ public class PickupSpawn : MonoBehaviour
         Instantiate(spawnPrefab[randNum], transform.position, transform.rotation
     }
 
-  */
+ 
 }

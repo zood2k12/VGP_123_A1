@@ -16,13 +16,22 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         if (lifetime <= 0) lifetime = 2.0f;
-
         Destroy(gameObject, lifetime);
     }
 
     public void SetVelocity(float xVel, float yVel)
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(xVel, yVel);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag ("Wall"))
+                Destroy(gameObject);
+
+        if(collision.gameObject.CompareTag("Player") && CompareTag("EnemyProjectile"))
+                Destroy(gameObject);
     }
 
 }

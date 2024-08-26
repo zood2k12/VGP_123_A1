@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Coroutine speedChange;
 
     //Remove the comment below when ready; used to finish the Lab 4
-    /*public void PowerupValueChange(Pickup.PickupType type)
+    public void PowerupValueChange(Pickup.PickupType type)
     {
         if (type == Pickup.PickupType.PowerupSpeed)
             StartPowerupCoroutine(ref speedChange, ref speed, type);
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Debug.Log($"Jump force value is {jumpForce}, Speed value is {speed}");
-    }*/
+    }
 
     //Private Lives Variable
     private int _lives = 10;
@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
             {
                 //game over function called here
                 //return to prevent the rest of the function to be called
+                //if the game over has a scene and move over then theres nothing to return to, but this return below its more like a safe thing to have
                 return;
             }
 
