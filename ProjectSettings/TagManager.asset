@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wall
   - Barrier
+  - Squish
+  - Enemy
   layers:
   - Default
   - TransparentFX
