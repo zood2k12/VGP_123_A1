@@ -8,28 +8,36 @@ public class EnemyTurretShooting : MonoBehaviour
     public Transform bulletPos;
 
     public float timer;
-    
-    // Start is called before the first frame update
-    void start()
-    {
+    private GameObject player;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     private void Update()
     {
-        timer += Time.deltaTime;
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+        Debug.Log(distance);
 
-        if (timer > 2)
+        if (distance < 10)
         {
-            timer = 0;
-            shoot();
+            timer += Time.deltaTime;
 
+            if (timer > 2)
+            {
+                timer = 0;
+                shoot();
+            }
+            
+        }           
 
-        }
         void shoot()
         {
             Instantiate(bullet, bulletPos.position, Quaternion.identity);
 
         }
     }
+}
