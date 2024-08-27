@@ -1310,9 +1310,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800355830}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1b2a1a85a53d72842a74de14323a5717, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1636d5d0f1500c3499a4d807194f0e1a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1364,12 +1364,12 @@ SpriteRenderer:
   m_SortingLayerID: -280868709
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1317992884, guid: fc37f852bc452224db1285b7fdcbe3b5, type: 3}
+  m_Sprite: {fileID: -1832221286, guid: dea861bd636303b4abafd2eaae76e16e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.27}
+  m_Size: {x: 0.8, y: 1.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1439,7 +1439,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
     oldSize: {x: 0.8, y: 1.35}
-    newSize: {x: 0.16, y: 0.27}
+    newSize: {x: 0.8, y: 1.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1601,7 +1601,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1923,7 +1923,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
