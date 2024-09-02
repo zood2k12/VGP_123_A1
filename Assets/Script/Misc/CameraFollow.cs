@@ -16,6 +16,7 @@ public class CameraFollow : MonoBehaviour
     //This function runs after fixed update - Unity specifies this is where camera movement should happens
     private void LateUpdate()
     {
+        PlayerController pc = GameManager.Instance.PlayerInstance;
         Vector3 cameraPos = transform.position;
 
         cameraPos.x = Mathf.Clamp(player.transform.position.x, minXClamp, maxXClamp);

@@ -217,6 +217,25 @@ public class PlayerController : MonoBehaviour
 
     void IncreaseGravity()
     {
-        rb.gravityScale = 10;
+        rb.gravityScale = 10;  
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            GameManager.Instance.lives--;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Squish"))
+        {
+            collision.gameObject.GetComponentInParent<Enemy>().TakeDamage(9999);
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+}
+
 }
