@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance => instance;
 
     //Private Lives Variable
-    private int _lives = 3;
+    private int _lives = 10;
 
     //public variable for getting and setting lives
     public int lives
@@ -76,10 +76,10 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (SceneManager.GetActiveScene().name == "Title")
-                SceneManager.LoadScene("Level");
-            else
+            if (SceneManager.GetActiveScene().name == "GameOver" || SceneManager.GetActiveScene().name == "Level")
                 SceneManager.LoadScene("Title");
+            else
+                SceneManager.LoadScene("Level");
         }
 
     }
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         Debug.Log("Game Over, change it to move to a specific level");
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("GameOver");
     }
 
     void Respawn()

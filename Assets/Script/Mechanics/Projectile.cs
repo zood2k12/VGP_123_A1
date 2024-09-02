@@ -7,11 +7,14 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField, Range(1, 50)] private float lifetime;
 
-    // speed values on the x anbd y axis  - this is set by the shoot script
-    [HideInInspector]
-    public float xVel;
-    [HideInInspector]
-    public float yVel;
+    //This was commented to check the new script
+
+    //// speed values on the x anbd y axis  - this is set by the shoot script
+    //[HideInInspector]
+    //public float xVel;
+    //[HideInInspector]
+    //public float yVel;
+
 
     void Start()
     {
@@ -30,14 +33,15 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
             Destroy(gameObject);
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && CompareTag("PlayerProjectile"))
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(10);
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && CompareTag("EnemyProjectile"))
         {
+            GameManager.Instance.lives--;
             Destroy(gameObject);
         }
     }

@@ -58,47 +58,55 @@ public class PlayerController : MonoBehaviour
         Debug.Log($"Jump force value is {jumpForce}, Speed value is {speed}");
     }
 
+    //This section below from private _lives to SerializedField was cut and pasted on the GameManager.cs
     //Private Lives Variable
-    private int _lives = 10;
+    //private int _lives = 10;
+
 
     //public variable for getting and setting lives
-    public int lives
-    {
-        get
-        {
-            return _lives;
-        }
-        set
-        {
-            //all lives lost (zero counts as a life due to the check)
-            if (value < 0)
-            {
-                //game over function called here
-                //return to prevent the rest of the function to be called
-                //if the game over has a scene and move over then theres nothing to return to, but this return below its more like a safe thing to have
-                return;
-            }
+    //public int lives
+    //{
+    //    get
+    //    {
+    //        return _lives;
+    //    }
+    //    set
+    //    {
+    //        all lives lost(zero counts as a life due to the check)
+    //        if (value < 0)
+    //        {
+    //            game over function called here
+    //            return to prevent the rest of the function to be called
+    //            if the game over has a scene and move over then theres nothing to return to, but this return below its more like a safe thing to have
+    //            return;
+    //        }
 
-            //lost a life
-            if (value < _lives)
-            {
-                //Respawn function called here
-            }
+    //        lost a life
+    //        if (value < _lives)
+    //        {
+    //            Respawn function called here
+    //        }
 
-            //cannot roll over max lives
-            if (value > maxLives)
-            {
-                value = maxLives;
-            }
+    //        cannot roll over max lives
+    //        if (value > maxLives)
+    //        {
+    //            value = maxLives;
+    //        }
 
-            _lives = value;
+    //        _lives = value;
 
-            Debug.Log($"Lives value on {gameObject.name} has changed to {lives}");
-        }
-    }
+    //        Debug.Log($"Lives value on {gameObject.name} has changed to {lives}");
+    //    }
+    //}
 
     //max lives that are possible
-    [SerializeField] private int maxLives = 10;
+    //[SerializeField] private int maxLives = 10;
+    //Private Lives Variable
+    //private int _lives = 10;
+
+
+    //public variable for getting and setting lives
+    
 
     //Movement Variables
     [SerializeField, Range(1, 20)] private float speed = 5;
@@ -236,6 +244,4 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
-}
-
 }

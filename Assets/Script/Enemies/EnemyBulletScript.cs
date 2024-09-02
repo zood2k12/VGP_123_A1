@@ -12,10 +12,12 @@ public class EnemyBulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // PlayerController pc = GameManager.Instance.PlayerInstance;
+        PlayerController pc = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        Vector2 direction = player.transform.position - transform.position;
+        Vector2 direction = pc.transform.position - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;

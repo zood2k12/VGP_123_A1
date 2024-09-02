@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyTurret : Enemy
 {
-    public Transform playerTransform;
+    //public Transform playerTransform;
     [SerializeField] private float disThreshold;
     [SerializeField] private float projectileFireRate;
 
@@ -23,12 +23,13 @@ public class EnemyTurret : Enemy
     // Update is called once per frame
     void Update()
     {
+        PlayerController pc = GameManager.Instance.PlayerInstance;
         AnimatorClipInfo[] curPlayingClips = anim.GetCurrentAnimatorClipInfo(0);
 
-        sr.flipX = (playerTransform.position.x < transform.position.x) ? true : false;
+        sr.flipX = (pc.transform.position.x < transform.position.x) ? true : false;
 
-
-        float distance = Vector3.Distance(GameObject.Find("Player").transform.position, GameObject.Find("Turret").transform.position);
+        //Changed from game GameObject.Find("Player") to pc
+        float distance = Vector3.Distance(pc.transform.position, GameObject.Find("Turret").transform.position);
 
         if (curPlayingClips[0].clip.name.Contains("Idle"))
         {
