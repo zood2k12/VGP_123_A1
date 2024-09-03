@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     public static GameManager Instance => instance;
+
+    public Action<int> OnLifeValueChanged;
+    //public UnityEvent<int> OnLifeValueChanged;
 
     //Private Lives Variable
     private int _lives = 10;
@@ -38,6 +42,8 @@ public class GameManager : MonoBehaviour
             }
 
             _lives = value;
+            OnLifeValueChanged?.Invoke(_lives);
+            //Added  OnLifeValueChanged?.Invoke(_lives) / Sept 3rd
 
             Debug.Log($"Lives value on {gameObject.name} has changed to {lives}");
         }
@@ -50,6 +56,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public PlayerController PlayerInstance => playerInstance;
     private PlayerController playerInstance;
     private Transform currentCheckpoint;
+    private MenuController currentMenuController;
 
     private void Awake()
     {
@@ -74,16 +81,30 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!currentMenuController) return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (SceneManager.GetActiveScene().name == "GameOver" || SceneManager.GetActiveScene().name == "Level")
-                SceneManager.LoadScene("Title");
-            else
-                SceneManager.LoadScene("Level");
+            currentMenuController.SetActiveState(MenuController.MenuStates.Pause);
         }
+
+        // Code below made as comment since was substitute by the one above Sept 3rd
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    if (SceneManager.GetActiveScene().name == "GameOver" || SceneManager.GetActiveScene().name == "Level")
+        //        SceneManager.LoadScene("Title");
+        //    else
+        //        SceneManager.LoadScene("Level");
+        //}
 
     }
 
+    
+
+    //public void LoadScene(string sceneName)
+    
+
+    
     void GameOver()
     {
         Debug.Log("Game Over, change it to move to a specific level");
@@ -104,5 +125,10 @@ public class GameManager : MonoBehaviour
     public void UpdateCheckpoint(Transform updatedCheckpoint)
     {
         currentCheckpoint = updatedCheckpoint;
+    }
+
+    public void SetMenuController(MenuController menuController)
+    {
+        currentMenuController = menuController;
     }
 }
