@@ -5793,7 +5793,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Turret
+      name: Turretxxx
       rect:
         serializedVersion: 2
         x: 327
@@ -7161,7 +7161,7 @@ TextureImporter:
       name: TurretFire2
       rect:
         serializedVersion: 2
-        x: 823
+        x: 824
         y: 312
         width: 24
         height: 32
@@ -7200,7 +7200,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TurretFireIdle
+      name: TurretIdle
       rect:
         serializedVersion: 2
         x: 881
@@ -15280,7 +15280,6 @@ TextureImporter:
       Sprite_Enemies_97: 2095296263
       Sprite_Enemies_98: 1377922293
       Sprite_Enemies_99: -1115467741
-      Turret: -387791117
       TurretBullet: 629645614
       TurretDeath: -1363765665
       TurretDeath1: 567875508
@@ -15290,7 +15289,8 @@ TextureImporter:
       TurretFire1: 1762744559
       TurretFire2: -645793339
       TurretFire3: 2142822395
-      TurretFireIdle: 21498521
+      TurretIdle: 21498521
+      Turretxxx: -387791117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

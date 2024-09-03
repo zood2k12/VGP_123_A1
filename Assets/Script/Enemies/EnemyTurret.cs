@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyTurret : Enemy
 {
+    //Hisham's method
     //public Transform playerTransform;
-    [SerializeField] private float disThreshold;
+    [SerializeField] private float distThreshold;
     [SerializeField] private float projectileFireRate;
 
     private float timeSinceLastFire = 0;
@@ -18,6 +19,13 @@ public class EnemyTurret : Enemy
 
         if (projectileFireRate <= 0)
             projectileFireRate = 2;
+
+        //Hisham's method
+        if (projectileFireRate <= 0)
+            projectileFireRate = 2;
+
+        if (distThreshold <= 0)
+            distThreshold = 2;
     }
 
     // Update is called once per frame
@@ -26,28 +34,57 @@ public class EnemyTurret : Enemy
         PlayerController pc = GameManager.Instance.PlayerInstance;
         AnimatorClipInfo[] curPlayingClips = anim.GetCurrentAnimatorClipInfo(0);
 
+        //Hisham's method
         sr.flipX = (pc.transform.position.x < transform.position.x) ? true : false;
 
-        //Changed from game GameObject.Find("Player") to pc
-        float distance = Vector3.Distance(pc.transform.position, GameObject.Find("Turret").transform.position);
+        //float distance = Vector2.Distance([playerTransform.position, transform.position.x);
 
-        if (curPlayingClips[0].clip.name.Contains("Idle"))
+        //if (playerTransform.position.x <  transform.position.x)
+        //    sr.flipX = true;
+        //else 
+        //    sr.flipX = false;
+
+
+        float distance = Vector2.Distance(pc.transform.position, transform.position);
+
+        if (distance < distThreshold)
         {
-            if (Time.time >= timeSinceLastFire + projectileFireRate && distance <= 4.0f)
+            sr.color = Color.red;
+            if (curPlayingClips[0].clip.name.Contains("Idle"))
             {
-                anim.SetTrigger("Fire");
-                timeSinceLastFire = Time.time;
+                if (Time.time >= timeSinceLastFire + projectileFireRate)
+                {
+                    anim.SetTrigger("Fire");
+                    timeSinceLastFire = Time.time;
+                }
             }
-        }
-
-        //GameObject.Find("Player") to pc
-        if (pc.transform.position.x < GameObject.Find("Turret").transform.position.x)
-        {
-            sr.flipX = true;
         }
         else
         {
-            sr.flipX = false;
+            sr.color = Color.white;
         }
+
+
+        //MY OLD SCRIPT
+        //float distance = Vector2.Distance(GameObject.Find("Player").transform.position, GameObject.Find("Turret").transform.position);
+
+
+        //if (curPlayingClips[0].clip.name.Contains("Idle"))
+        //{
+        //    if (Time.time >= timeSinceLastFire + projectileFireRate && distance <= 6.0f)
+        //    {
+        //        anim.SetTrigger("Fire");
+        //        timeSinceLastFire = Time.time;
+        //    }
+        //}
+
+        //if (GameObject.Find("Player").transform.position.x < GameObject.Find("Turret").transform.position.x)
+        //{
+        //    sr.flipX = true;
+        //}
+        //else
+        //{
+        //    sr.flipX = false;
+        //}
     }
 }
