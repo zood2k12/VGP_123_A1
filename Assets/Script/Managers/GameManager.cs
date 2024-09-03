@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
 
             _lives = value;
 
-            //Sept 3rd - Game lives msg debug not showing change, need to check with Hisham
             Debug.Log($"Lives value on {gameObject.name} has changed to {lives}");
         }
     }
@@ -87,10 +86,9 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("Game Over, change it to move to a specific scene called Game Over");
+        Debug.Log("Game Over, change it to move to a specific level");
         SceneManager.LoadScene("GameOver");
     }
-
 
     void Respawn()
     {
