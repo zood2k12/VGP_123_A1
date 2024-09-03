@@ -40,7 +40,8 @@ public class EnemyTurret : Enemy
             }
         }
 
-        if (GameObject.Find("Player").transform.position.x < GameObject.Find("Turret").transform.position.x)
+        //GameObject.Find("Player") to pc
+        if (pc.transform.position.x < GameObject.Find("Turret").transform.position.x)
         {
             sr.flipX = true;
         }

@@ -171,9 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9210dd8af37ca14ba8be73ff1ff1889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  disThreshold: 0
-  projectileFireRate: 0
+  maxHealth: 1
+  disThreshold: 5
+  projectileFireRate: 2
 --- !u!95 &5527439291480139019
 Animator:
   serializedVersion: 5
