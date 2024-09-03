@@ -99,12 +99,16 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
+
 
     //public void LoadScene(string sceneName)
-    
 
-    
+    //void LoadScene added Sept 3rd
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     void GameOver()
     {
         Debug.Log("Game Over, change it to move to a specific level");

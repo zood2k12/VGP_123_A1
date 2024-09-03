@@ -5,6 +5,7 @@ public class MainMenu : BaseMenu
 {
     public Button playButton;
     public Button settingsButton;
+    public Button quitButton;
 
     public override void InitState(MenuController ctx)
     {
@@ -12,6 +13,8 @@ public class MainMenu : BaseMenu
         state = MenuController.MenuStates.MainMenu;
         playButton.onClick.AddListener(() => GameManager.Instance.LoadScene("Level"));
         settingsButton.onClick.AddListener(() => context.SetActiveState(MenuController.MenuStates.Settings));
+        quitButton.onClick.AddListener(QuitGame);
+
     }
 
 
