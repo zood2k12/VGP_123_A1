@@ -14,7 +14,6 @@ public class MainMenu : BaseMenu
         playButton.onClick.AddListener(() => GameManager.Instance.LoadScene("Level"));
         settingsButton.onClick.AddListener(() => context.SetActiveState(MenuController.MenuStates.Settings));
         quitButton.onClick.AddListener(QuitGame);
-
     }
 
 
