@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Can only add 3 components at a time so need to add another line
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
     //Player gameplay variables
     private Coroutine jumpForceChange;
     private Coroutine speedChange;
 
+
+    AudioSource source;
     //Remove the comment below when ready; used to finish the Lab 4
     public void PowerupValueChange(Pickup.PickupType type)
     {
@@ -106,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
 
     //public variable for getting and setting lives
-    
+
 
     //Movement Variables
     [SerializeField, Range(1, 20)] private float speed = 5;
@@ -122,6 +126,11 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
     Animator anim;
+    AudioSource audioSource;
+
+    //Audio Clip References
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip stompClip;
 
     // Start is called before the first frame update
     void Start()
@@ -158,6 +167,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Added Early returns to help for not run the lines of code anymore
+        if (Time.timeScale <= 0) return;
+
         AnimatorClipInfo[] curPlayingClips = anim.GetCurrentAnimatorClipInfo(0);
         //grab horizontal axis - Check Project Settings > Input Manager to see the inputs defined
         float hInput = Input.GetAxis("Horizontal");

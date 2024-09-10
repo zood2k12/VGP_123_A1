@@ -41,5 +41,6 @@ public class Shoot : MonoBehaviour
             Projectile curProjectile = Instantiate(projectilePrefab, spawnPointLeft.position, Quaternion.identity);
             curProjectile.SetVelocity(-xVel, yVel);
         }
+        audioSource.PlayOneShot()
     }
 }

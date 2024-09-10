@@ -15,10 +15,24 @@ public class Pickup : MonoBehaviour
 
     [SerializeField] private PickupType type;
 
+    public AudioClip pickupSound;
+
+    SpriteRenderer sr;
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
+            Collider2D myCollider = GetComponent<Collider2D>();
+            Physics2D.IgnoreCollision(myCollider, collider);
+
             switch (type)
             {
                 case PickupType.Life:
@@ -32,6 +46,10 @@ public class Pickup : MonoBehaviour
                 case PickupType.Score:
                     break;
             }
+            sr.enabled = false;
+            audioSource.PlayOneShot(pickupSound);
+
+
             Destroy(gameObject);
         }
 
