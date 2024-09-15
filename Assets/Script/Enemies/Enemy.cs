@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer), typeof(Animator), typeof(AudioSource))]
 public abstract class Enemy : MonoBehaviour
 {
     //private - private to the class that has created it. It is only a property of the class and nothing else can access it.
@@ -12,15 +12,20 @@ public abstract class Enemy : MonoBehaviour
 
     protected SpriteRenderer sr;
     protected Animator anim;
+    protected AudioSource audioSource;
 
     protected int health;
     [SerializeField] protected int maxHealth;
+    [SerializeField] protected AudioClip deathClip;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.outputAudioMixerGroup = GameManager.Instance.SFXGroup;
 
         if (maxHealth <= 0) maxHealth = 10;
 
@@ -33,6 +38,11 @@ public abstract class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            if (deathClip != null)
+            {
+                audioSource.PlayOneShot(deathClip);
+            }
+
             anim.SetTrigger("Death");
 
             if (transform.parent != null)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 //Can only add 3 components at a time so need to add another line
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(Animator))]
@@ -131,6 +132,9 @@ public class PlayerController : MonoBehaviour
     //Audio Clip References
     [SerializeField] private AudioClip jumpClip;
     [SerializeField] private AudioClip stompClip;
+    [SerializeField] private AudioClip playerDeathClip;
+    //AudioMixerCHannel reference
+    public AudioMixerGroup SFXGroup;
 
     // Start is called before the first frame update
     void Start()
@@ -139,6 +143,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.outputAudioMixerGroup = GameManager.Instance.SFXGroup;
 
         //Checking values to ensure non garbage data
         if (speed <= 0)
@@ -244,6 +251,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             GameManager.Instance.lives--;
+            audioSource.PlayOneShot(playerDeathClip);
         }
     }
 
@@ -254,6 +262,11 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.GetComponentInParent<Enemy>().TakeDamage(9999);
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            audioSource.PlayOneShot(stompClip);
         }
+    }
+    public void MarioDeathAudio()
+    {
+        audioSource.PlayOneShot(playerDeathClip);
     }
 }

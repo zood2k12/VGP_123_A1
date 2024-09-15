@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class Pickup : MonoBehaviour
 {
     public enum PickupType
@@ -24,7 +26,9 @@ public class Pickup : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+
     }
+
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -32,7 +36,6 @@ public class Pickup : MonoBehaviour
         {
             Collider2D myCollider = GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(myCollider, collider);
-
             switch (type)
             {
                 case PickupType.Life:
@@ -50,7 +53,7 @@ public class Pickup : MonoBehaviour
             audioSource.PlayOneShot(pickupSound);
 
 
-            Destroy(gameObject);
+            Destroy(gameObject, pickupSound.length);
         }
 
     }
